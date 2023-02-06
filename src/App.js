@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React , {Fragment, useState} from 'react';
+import Navbar from './Components/Navbar';
+import Form from './Components/Form';
 
 function App() {
+
+  const [registro, setRegistro] = useState({
+    cliente: ''
+  })
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Navbar brand='Virtual Token App'></Navbar>
+      <div className="m-4" style={{height: '600px'}}>
+        <Form registro={registro} setRegistro={setRegistro}></Form>
+      </div>
+    </Fragment>
   );
 }
 
